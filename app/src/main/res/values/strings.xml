@@ -1,0 +1,29 @@
+<resources>
+    <string name="app_name">EAD_Ecommerce_Mobile_new</string>
+
+    <!-- Sign up Page -->
+    <string name="signup_id">Sign up</string>
+    <string name="userName">Full name</string>
+    <string name="userEmail">Email</string>
+    <string name="userADD">Address</string>
+    <string name="userTELE">Telephone Number</string>
+    <string name="userUSERNAME">Username</string>
+    <string name="userPASS">Password</string>
+    <string name="check_box">I agree to terms and conditions</string>
+    <string name="btn_submit_C">SUBMIT</string>
+    <string name="login_C">LOGIN</string>
+
+    <!-- Login Page-->
+    <string name="LoginTxt">Login</string>
+    <string name="LoginEmail">Email</string>
+    <string name="LoginBtn">LOGIN</string>
+
+    <!-- Main Page-->
+    <string name="DashBoard1">Products</string>
+    <string name="DashBoard2">Order List</string>
+    <string name="DashBoard3">Ratings</string>
+    <string name="DashBoard4">Profile</string>
+
+    <!-- Update Account Page -->
+    <string name="upd_button">Update</string>
+</resources>

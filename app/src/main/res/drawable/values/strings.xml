@@ -1,0 +1,40 @@
+<resources>
+    <string name="app_name">EAD_Ecommerce_Mobile</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Bihesha Dilshan</string>
+    <string name="nav_header_subtitle">bihesha@gmail.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="menu_home">Home</string>
+    <string name="menu_gallery">Gallery</string>
+    <string name="menu_slideshow">Slideshow</string>
+    <string name="menu_logout">Logout</string>
+
+    <!-- Sign up Page -->
+    <string name="signup_id">Sign up</string>
+    <string name="userName">Full name</string>
+    <string name="userEmail">Email</string>
+    <string name="userADD">Address</string>
+    <string name="userTELE">Telephone Number</string>
+    <string name="userUSERNAME">Username</string>
+    <string name="userPASS">Password</string>
+    <string name="check_box">I agree to terms and conditions</string>
+    <string name="btn_submit_C">SUBMIT</string>
+    <string name="login_C">LOGIN</string>
+
+    <!-- Login Page-->
+    <string name="LoginTxt">Login</string>
+    <string name="LoginEmail">Email</string>
+    <string name="LoginBtn">LOGIN</string>
+
+    <!-- Main Page-->
+    <string name="DashBoard1">Products</string>
+    <string name="DashBoard2">Order List</string>
+    <string name="DashBoard3">Ratings</string>
+    <string name="DashBoard4">Profile</string>
+
+    <!-- Update Account Page -->
+    <string name="upd_button">Update</string>
+</resources>

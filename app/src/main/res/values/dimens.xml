@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Sign up Page -->
+    <dimen name="btn_register">0dp</dimen>
+    <dimen name="btn_register_height">69dp</dimen>
+
+    <!-- Login Page-->
+    <dimen name="index_sentence">20sp</dimen>
+
+    <!-- Main Page -->
+    <dimen name="mainPage_sentence">40sp</dimen>
+
+    <!-- View Profile Page-->
+    <dimen name="view_btn_update">225dp</dimen>
+    <dimen name="view_btn_update_height">0dp</dimen>
+</resources>
