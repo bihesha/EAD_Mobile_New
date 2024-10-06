@@ -5,7 +5,9 @@ import com.example.ead_ecommerce_mobile_new.models.LoginRequest
 import com.example.ead_ecommerce_mobile_new.models.LoginResponse
 import retrofit2.Call
 import retrofit2.http.Body
+import retrofit2.http.GET
 import retrofit2.http.POST
+import retrofit2.http.Path
 
 interface CustomerApi {
     @POST("api/User")
@@ -13,4 +15,8 @@ interface CustomerApi {
 
     @POST("api/User/login")
     fun login(@Body loginRequest: LoginRequest): Call<LoginResponse>
+
+    @GET("api/User/getSingleUser/{id}")
+    fun getSingleUser(@Path("id") userId: String): Call<Customer>
+
 }
