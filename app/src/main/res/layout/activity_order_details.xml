@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <TextView
+        android:id="@+id/orderId"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Order ID" />
+
+    <TextView
+        android:id="@+id/orderNumber"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Order Number" />
+
+    <TextView
+        android:id="@+id/orderTotalPrice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Total Price" />
+
+    <TextView
+        android:id="@+id/orderStatus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Order Status" />
+
+    <TextView
+        android:id="@+id/deliveryStatus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Delivery Status" />
+
+    <TextView
+        android:id="@+id/orderDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Order Date" />
+
+    <TextView
+        android:id="@+id/orderCancellationNote"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Cancellation Note" />
+
+    <Button
+        android:id="@+id/btnBackToOrders"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Back to Orders" />
+
+</LinearLayout>

@@ -22,6 +22,11 @@ class MainActivity : AppCompatActivity() {
             val intent = Intent(this, UserProfileActivity::class.java)
             startActivity(intent)
         }
+
+        binding.imgbtnOrder.setOnClickListener {
+            val intent = Intent(this, OrderDetailsActivity::class.java)
+            startActivity(intent)
+        }
     }
 
 }

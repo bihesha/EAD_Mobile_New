@@ -45,6 +45,10 @@
             android:name=".activities.UpdateProfileActivity"
             android:exported="false" />
 
+        <activity
+            android:name=".activities.OrderDetailsActivity"
+            android:exported="false" />
+
     </application>
 
 </manifest>
