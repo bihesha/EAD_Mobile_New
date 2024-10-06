@@ -6,13 +6,145 @@
     android:layout_height="match_parent"
     tools:context=".activities.MainActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="59dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/mainSentence"
+                android:layout_width="349dp"
+                android:layout_height="157dp"
+                android:layout_marginTop="44dp"
+                android:text="“You Can Buy Any Product Of the Cart.io:)”"
+                android:textAlignment="center"
+                android:textColor="@color/rectGreen"
+                android:textSize="@dimen/mainPage_sentence"
+                android:textStyle="bold|italic"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageButton
+                android:id="@+id/imgbtnProduct"
+                android:layout_width="157dp"
+                android:layout_height="146dp"
+                android:layout_marginTop="48dp"
+                android:layout_marginEnd="100dp"
+                android:background="@drawable/button_round"
+                android:contentDescription="This is the All Products"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/mainSentence"
+                app:layout_constraintTop_toBottomOf="@+id/mainSentence"
+                android:src="@drawable/baseline_add_shopping_cart_24"/>
+
+            <ImageButton
+                android:id="@+id/imgbtnOrder"
+                android:layout_width="152dp"
+                android:layout_height="148dp"
+                android:layout_marginTop="48dp"
+                android:background="@drawable/button_round"
+                android:contentDescription="This is the All Orders"
+                app:layout_constraintEnd_toEndOf="@+id/mainSentence"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toEndOf="@+id/imgbtnProduct"
+                app:layout_constraintTop_toBottomOf="@+id/mainSentence"
+                android:src="@drawable/baseline_view_list_24"/>
+
+            <ImageButton
+                android:id="@+id/imgbtnRating"
+                android:layout_width="152dp"
+                android:layout_height="148dp"
+                android:layout_marginTop="64dp"
+                android:background="@drawable/button_round"
+                android:contentDescription="This is the All Ratings"
+                android:src="@drawable/baseline_star_24"
+                app:layout_constraintEnd_toEndOf="@+id/imgbtnProduct"
+                app:layout_constraintHorizontal_bias="0.497"
+                app:layout_constraintStart_toStartOf="@+id/imgbtnProduct"
+                app:layout_constraintTop_toBottomOf="@+id/imgbtnOrder" />
+
+            <ImageButton
+                android:id="@+id/imgbtnProfile"
+                android:layout_width="152dp"
+                android:layout_height="148dp"
+                android:layout_marginTop="64dp"
+                android:background="@drawable/button_round"
+                android:contentDescription="This is the All Ratings"
+                android:src="@drawable/baseline_person_2_24"
+                app:layout_constraintEnd_toEndOf="@+id/imgbtnOrder"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/imgbtnOrder"
+                app:layout_constraintTop_toBottomOf="@+id/imgbtnOrder" />
+
+            <TextView
+                android:id="@+id/DashBoard_heading1"
+                android:layout_width="181dp"
+                android:layout_height="33dp"
+                android:layout_marginTop="12dp"
+                android:text="@string/DashBoard1"
+                android:textAlignment="center"
+                android:textColor="#000000"
+                android:textSize="22sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="@+id/imgbtnProduct"
+                app:layout_constraintHorizontal_bias="0.625"
+                app:layout_constraintStart_toStartOf="@+id/imgbtnProduct"
+                app:layout_constraintTop_toBottomOf="@+id/imgbtnProduct" />
+
+            <TextView
+                android:id="@+id/DashBoard_heading2"
+                android:layout_width="181dp"
+                android:layout_height="33dp"
+                android:layout_marginTop="12dp"
+                android:text="@string/DashBoard2"
+                android:textAlignment="center"
+                android:textColor="#000000"
+                android:textSize="22sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="@+id/imgbtnOrder"
+                app:layout_constraintHorizontal_bias="0.482"
+                app:layout_constraintStart_toStartOf="@+id/imgbtnOrder"
+                app:layout_constraintTop_toBottomOf="@+id/imgbtnOrder" />
+
+            <TextView
+                android:id="@+id/DashBoard_heading3"
+                android:layout_width="181dp"
+                android:layout_height="33dp"
+                android:layout_marginTop="12dp"
+                android:text="@string/DashBoard3"
+                android:textAlignment="center"
+                android:textColor="#000000"
+                android:textSize="22sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="@+id/imgbtnRating"
+                app:layout_constraintHorizontal_bias="0.482"
+                app:layout_constraintStart_toStartOf="@+id/imgbtnRating"
+                app:layout_constraintTop_toBottomOf="@+id/imgbtnRating" />
+
+            <TextView
+                android:id="@+id/DashBoard_heading4"
+                android:layout_width="181dp"
+                android:layout_height="33dp"
+                android:layout_marginTop="12dp"
+                android:text="@string/DashBoard4"
+                android:textAlignment="center"
+                android:textColor="#000000"
+                android:textSize="22sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="@+id/imgbtnProfile"
+                app:layout_constraintHorizontal_bias="0.482"
+                app:layout_constraintStart_toStartOf="@+id/imgbtnProfile"
+                app:layout_constraintTop_toBottomOf="@+id/imgbtnProfile" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
