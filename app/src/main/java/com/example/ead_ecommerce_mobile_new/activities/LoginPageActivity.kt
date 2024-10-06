@@ -2,6 +2,7 @@ package com.example.ead_ecommerce_mobile_new.activities
 
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.ead_ecommerce_mobile_new.api.Retrofit.RetrofitInstance
@@ -45,6 +46,8 @@ class LoginPageActivity: AppCompatActivity() {
             override fun onResponse(call: Call<LoginResponse>, response: Response<LoginResponse>) {
                 if (response.isSuccessful) {
                     response.body()?.let {
+                        // Log the full response to check what is returned
+                        Log.d("LoginResponse", "UserId: ${it.userId}, Email: $email")
                         // Successful login
                         val loginResponse = response.body()!!
                         Toast.makeText(this@LoginPageActivity, "Login successful!", Toast.LENGTH_SHORT).show()
