@@ -24,7 +24,7 @@ class MainActivity : AppCompatActivity() {
         }
 
         binding.imgbtnOrder.setOnClickListener {
-            val intent = Intent(this, OrderDetailsActivity::class.java)
+            val intent = Intent(this, AllOrdersActivity::class.java)
             startActivity(intent)
         }
     }
