@@ -195,6 +195,25 @@
                 app:layout_constraintStart_toStartOf="@+id/btnviewUpdate"
                 app:layout_constraintTop_toBottomOf="@+id/btnviewUpdate" />
 
+            <Button
+                android:id="@+id/btndeactivate"
+                android:layout_width="248dp"
+                android:layout_height="68dp"
+                android:layout_marginTop="12dp"
+                android:backgroundTint="@color/rectGreen"
+                android:paddingLeft="20dp"
+                android:paddingTop="10dp"
+                android:paddingRight="10dp"
+                android:paddingBottom="10dp"
+                android:text="Deactivate Account"
+                android:textAlignment="center"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="@+id/btndelete"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="@+id/btndelete"
+                app:layout_constraintTop_toBottomOf="@+id/btndelete" />
+
             <ImageView
                 android:id="@+id/btnBackViewProfile"
                 android:layout_width="38dp"
