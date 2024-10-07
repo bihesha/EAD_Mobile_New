@@ -44,6 +44,10 @@ class UserProfileActivity : AppCompatActivity() {
             confirmDeletion(userId)
         }
 
+        binding.btndeactivate.setOnClickListener {
+            confirmDeactivation(userId)
+        }
+
         binding.btnBackViewProfile.setOnClickListener {
             val intent = Intent(this,MainActivity::class.java)
             startActivity(intent)
@@ -83,6 +87,36 @@ class UserProfileActivity : AppCompatActivity() {
             }
             .setNegativeButton("No", null)
             .show()
+    }
+
+    private fun confirmDeactivation(userId: String?) {
+        val builder = AlertDialog.Builder(this)
+        builder.setTitle("Confirm Deactivation")
+            .setMessage("Are you sure you want to deactivate your account?")
+            .setPositiveButton("Yes") { _, _ -> userId?.let { deactivateUser(it) } }
+            .setNegativeButton("No", null)
+            .show()
+    }
+
+    private fun deactivateUser(userId: String) {
+        // Call your updateAccountStatus API here to set account status to "NotActivate"
+        customerApi.updateAccountStatus(userId, "NotActivate").enqueue(object : Callback<Void> {
+            override fun onResponse(call: Call<Void>, response: Response<Void>) {
+                if (response.isSuccessful) {
+                    Toast.makeText(this@UserProfileActivity, "Account deactivated successfully", Toast.LENGTH_SHORT).show()
+                    // Clear shared preferences and redirect to login page
+                    sharedPreferences.edit().clear().apply()
+                    startActivity(Intent(this@UserProfileActivity, LoginPageActivity::class.java))
+                    finish() // Close the current activity
+                } else {
+                    Toast.makeText(this@UserProfileActivity, "Failed to deactivate account", Toast.LENGTH_SHORT).show()
+                }
+            }
+
+            override fun onFailure(call: Call<Void>, t: Throwable) {
+                Toast.makeText(this@UserProfileActivity, "Error: ${t.message}", Toast.LENGTH_SHORT).show()
+            }
+        })
     }
 
     private fun deleteUser(userId: String) {
