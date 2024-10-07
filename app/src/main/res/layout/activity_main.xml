@@ -9,53 +9,85 @@
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="59dp">
+        tools:layout_editor_absoluteX="31dp"
+        tools:layout_editor_absoluteY="16dp">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
             <TextView
+                android:id="@+id/textView"
+                android:layout_width="220dp"
+                android:layout_height="70dp"
+                android:layout_marginStart="28dp"
+                android:layout_marginTop="48dp"
+                android:gravity="center_horizontal"
+                android:letterSpacing="0.025"
+                android:text="Welcome"
+                android:textColor="@color/black"
+                android:textSize="42sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageButton
+                android:id="@+id/logOutCustomer"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:background="?attr/selectableItemBackground"
+                android:contentDescription="Logout icon"
+                android:gravity="center_vertical"
+                android:padding="1dp"
+                android:src="@drawable/baseline_logout_24"
+                app:layout_constraintBottom_toTopOf="@+id/mainSentence"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.504"
+                app:layout_constraintStart_toEndOf="@+id/textView"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.595" />
+
+            <TextView
                 android:id="@+id/mainSentence"
                 android:layout_width="349dp"
                 android:layout_height="157dp"
-                android:layout_marginTop="44dp"
+                android:layout_marginTop="24dp"
                 android:text="“You Can Buy Any Product Of the Cart.io:)”"
                 android:textAlignment="center"
                 android:textColor="@color/rectGreen"
                 android:textSize="@dimen/mainPage_sentence"
                 android:textStyle="bold|italic"
                 app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.451"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintTop_toBottomOf="@+id/textView" />
 
             <ImageButton
                 android:id="@+id/imgbtnProduct"
                 android:layout_width="157dp"
                 android:layout_height="146dp"
-                android:layout_marginTop="48dp"
+                android:layout_marginTop="38dp"
                 android:layout_marginEnd="100dp"
                 android:background="@drawable/button_round"
                 android:contentDescription="This is the All Products"
+                android:src="@drawable/baseline_add_shopping_cart_24"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="@+id/mainSentence"
-                app:layout_constraintTop_toBottomOf="@+id/mainSentence"
-                android:src="@drawable/baseline_add_shopping_cart_24"/>
+                app:layout_constraintTop_toBottomOf="@+id/mainSentence" />
 
             <ImageButton
                 android:id="@+id/imgbtnOrder"
                 android:layout_width="152dp"
                 android:layout_height="148dp"
-                android:layout_marginTop="48dp"
+                android:layout_marginTop="38dp"
                 android:background="@drawable/button_round"
                 android:contentDescription="This is the All Orders"
+                android:src="@drawable/baseline_view_list_24"
                 app:layout_constraintEnd_toEndOf="@+id/mainSentence"
                 app:layout_constraintHorizontal_bias="1.0"
                 app:layout_constraintStart_toEndOf="@+id/imgbtnProduct"
-                app:layout_constraintTop_toBottomOf="@+id/mainSentence"
-                android:src="@drawable/baseline_view_list_24"/>
+                app:layout_constraintTop_toBottomOf="@+id/mainSentence" />
 
             <ImageButton
                 android:id="@+id/imgbtnRating"
