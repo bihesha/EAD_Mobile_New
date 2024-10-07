@@ -1,6 +1,7 @@
 package com.example.ead_ecommerce_mobile_new.api.Retrofit
 
 import com.example.ead_ecommerce_mobile_new.api.Customer.CustomerApi
+import com.example.ead_ecommerce_mobile_new.api.Order.OrderApiService
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
@@ -21,4 +22,8 @@ object RetrofitInstance {
     val customerApi: CustomerApi by lazy {
         retrofit.create(CustomerApi::class.java)
     }
+    val orderApiService: OrderApiService by lazy {
+        retrofit.create(OrderApiService::class.java)
+    }
+
 }

@@ -28,6 +28,11 @@ class MainActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
+
+        binding.imgbtnOrder.setOnClickListener {
+            val intent = Intent(this, AllOrdersActivity::class.java)
+            startActivity(intent)
+
         binding.logOutCustomer.setOnClickListener {
             val builder = AlertDialog.Builder(this)
             builder.setTitle("Log Out")
@@ -49,6 +54,7 @@ class MainActivity : AppCompatActivity() {
 
             val dialog: AlertDialog = builder.create()
             dialog.show()
+
         }
     }
 
