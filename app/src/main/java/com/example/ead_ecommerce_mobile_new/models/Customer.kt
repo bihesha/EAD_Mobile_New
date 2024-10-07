@@ -10,7 +10,7 @@ data class Customer(
     val username: String,
     val accountStatus: String = "NotActivate",
     val password: String,
-    val avgRating: Double? = null
+    val avgRating: Double = 0.0
 )
 
 data class LoginRequest(
@@ -23,4 +23,9 @@ data class LoginResponse(
     val userType: String,
     val userId: String,
     val token: String
+)
+
+data class UpdateUserResponse(
+    val message: String,
+    val user: Customer
 )
