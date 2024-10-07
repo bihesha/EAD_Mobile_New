@@ -5,6 +5,7 @@ import android.content.Intent
 import android.content.SharedPreferences
 import android.os.Bundle
 import android.widget.Toast
+import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import com.example.ead_ecommerce_mobile_new.api.Customer.CustomerApi
 import com.example.ead_ecommerce_mobile_new.api.Retrofit.RetrofitInstance
@@ -40,8 +41,7 @@ class UserProfileActivity : AppCompatActivity() {
         }
 
         binding.btndelete.setOnClickListener {
-            val intent = Intent(this,LoginPageActivity::class.java)
-            startActivity(intent)
+            confirmDeletion(userId)
         }
 
         binding.btnBackViewProfile.setOnClickListener {
@@ -68,6 +68,38 @@ class UserProfileActivity : AppCompatActivity() {
             }
 
             override fun onFailure(call: Call<Customer>, t: Throwable) {
+                Toast.makeText(this@UserProfileActivity, "Error: ${t.message}", Toast.LENGTH_SHORT).show()
+            }
+        })
+    }
+
+    private fun confirmDeletion(userId: String?) {
+        // Show a confirmation dialog
+        val builder = AlertDialog.Builder(this)
+        builder.setTitle("Confirm Deletion")
+            .setMessage("Are you sure you want to delete your profile?")
+            .setPositiveButton("Yes") { _, _ ->
+                userId?.let { deleteUser(it) } // Proceed with deletion if userId is not null
+            }
+            .setNegativeButton("No", null)
+            .show()
+    }
+
+    private fun deleteUser(userId: String) {
+        customerApi.deleteUser(userId).enqueue(object : Callback<Void> {
+            override fun onResponse(call: Call<Void>, response: Response<Void>) {
+                if (response.isSuccessful) {
+                    Toast.makeText(this@UserProfileActivity, "User deleted successfully", Toast.LENGTH_SHORT).show()
+                    // Clear shared preferences and navigate to login page or main activity
+                    sharedPreferences.edit().clear().apply()
+                    startActivity(Intent(this@UserProfileActivity, LoginPageActivity::class.java))
+                    finish() // Close the current activity
+                } else {
+                    Toast.makeText(this@UserProfileActivity, "Failed to delete user", Toast.LENGTH_SHORT).show()
+                }
+            }
+
+            override fun onFailure(call: Call<Void>, t: Throwable) {
                 Toast.makeText(this@UserProfileActivity, "Error: ${t.message}", Toast.LENGTH_SHORT).show()
             }
         })
