@@ -57,6 +57,18 @@
             android:name=".activities.OrderDetailsActivity"
             android:exported="false" />
 
+        <activity
+            android:name=".adapter.ProductAdapter"
+            android:exported="false" />
+
+        <activity
+            android:name=".activities.AllProductActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".activities.ProductDetailActivity"
+            android:exported="false" />
+
     </application>
 
 </manifest>
