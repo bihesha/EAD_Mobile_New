@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:background="#f8f9fa">
+
+    <TextView
+        android:id="@+id/orderId"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Order ID"
+        android:textStyle="bold"
+        android:textSize="16sp"
+        android:padding="8dp"
+        android:background="#eeeeee"
+        android:layout_marginBottom="12dp" />
+
+    <TextView
+        android:id="@+id/orderNumber"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Order Number"
+        android:textStyle="bold"
+        android:textSize="16sp"
+        android:padding="8dp"
+        android:background="#eeeeee"
+        android:layout_marginBottom="12dp" />
+
+    <TextView
+        android:id="@+id/orderTotalPrice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Total Price"
+        android:textStyle="bold"
+        android:textSize="16sp"
+        android:padding="8dp"
+        android:background="#eeeeee"
+        android:layout_marginBottom="12dp" />
+
+    <TextView
+        android:id="@+id/orderStatus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Order Status"
+        android:textStyle="bold"
+        android:textSize="16sp"
+        android:padding="8dp"
+        android:background="#eeeeee"
+        android:layout_marginBottom="12dp" />
+
+    <TextView
+        android:id="@+id/deliveryStatus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Delivery Status"
+        android:textStyle="bold"
+        android:textSize="16sp"
+        android:padding="8dp"
+        android:background="#eeeeee"
+        android:layout_marginBottom="12dp" />
+
+    <TextView
+        android:id="@+id/orderDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Order Date"
+        android:textStyle="bold"
+        android:textSize="16sp"
+        android:padding="8dp"
+        android:background="#eeeeee"
+        android:layout_marginBottom="12dp" />
+
+    <TextView
+        android:id="@+id/orderCancellationNote"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Cancellation Note"
+        android:textStyle="bold"
+        android:textSize="16sp"
+        android:padding="8dp"
+        android:background="#eeeeee"
+        android:layout_marginBottom="12dp" />
+
+    <!-- Adding a Text Box for user input or display -->
+    <EditText
+        android:id="@+id/orderNoteInput"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter or display content here"
+        android:padding="12dp"
+        android:textSize="16sp"
+        android:background="@android:drawable/editbox_background"
+        android:layout_marginBottom="16dp" />
+
+    <Button
+        android:id="@+id/btnBackToOrders"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Back to Orders"
+        android:textColor="#ffffff"
+        android:background="@color/colorPrimary"
+        android:padding="12dp"
+        android:layout_gravity="center_horizontal" />
+
+</LinearLayout>

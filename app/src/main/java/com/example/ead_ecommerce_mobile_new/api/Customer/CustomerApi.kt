@@ -27,4 +27,8 @@ interface CustomerApi {
 
     @DELETE("api/User/deleteUser/{id}")
     fun deleteUser(@Path("id") userId: String): Call<Void>
+
+    @PUT("api/User/updateAccountStatus/{id}")
+    fun updateAccountStatus(@Path("id") userId: String, @Body accountStatus: String): Call<Void>
+
 }
