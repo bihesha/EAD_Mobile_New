@@ -36,7 +36,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="30dp"
-        android:text="“For a better tomorrow with green”"
+        android:text="“For Your Inspiration”"
         android:textColor="@color/rectGreen"
         android:textSize="@dimen/index_sentence"
         android:textStyle="bold|italic"

@@ -29,14 +29,22 @@ class MainActivity : AppCompatActivity() {
         }
 
 
+        binding.imgbtnRating.setOnClickListener {
+            val intent = Intent(this,RatingsActivity::class.java)
+            startActivity(intent)
+        }
+
+
         binding.imgbtnOrder.setOnClickListener {
             val intent = Intent(this, AllOrdersActivity::class.java)
             startActivity(intent)
 
-            binding.logOutCustomer.setOnClickListener {
-                val builder = AlertDialog.Builder(this)
-                builder.setTitle("Log Out")
-                builder.setMessage("Are you sure you want to log out?")
+
+        binding.logOutCustomer.setOnClickListener {
+            val builder = AlertDialog.Builder(this)
+            builder.setTitle("Log Out")
+            builder.setMessage("Are you sure you want to log out?")
+
 
                 builder.setPositiveButton("Yes") { dialog, which ->
                     // Clear user session data from SharedPreferences

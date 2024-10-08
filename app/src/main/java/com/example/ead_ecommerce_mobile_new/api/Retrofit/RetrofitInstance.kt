@@ -1,8 +1,13 @@
 package com.example.ead_ecommerce_mobile_new.api.Retrofit
 
 import com.example.ead_ecommerce_mobile_new.api.Customer.CustomerApi
+<
+import com.example.ead_ecommerce_mobile_new.api.Rating.RatingApi
+
 import com.example.ead_ecommerce_mobile_new.api.Order.OrderApiService
+
 import com.example.ead_ecommerce_mobile_new.api.Product.ProductApiService
+
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
