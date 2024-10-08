@@ -86,7 +86,7 @@ class OrderDetailsActivity : AppCompatActivity() {
 
     private fun displayOrderDetails(order: Order) {
         binding.apply {
-            orderId.text = order.id
+
             orderNumber.text = order.orderNumber
             orderTotalPrice.text = "Total: ${order.totalPrice}"
             orderStatus.text = order.orderStatus

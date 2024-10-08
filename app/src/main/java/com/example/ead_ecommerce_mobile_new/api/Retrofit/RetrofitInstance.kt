@@ -6,13 +6,15 @@ import com.example.ead_ecommerce_mobile_new.api.Rating.RatingApi
 
 import com.example.ead_ecommerce_mobile_new.api.Order.OrderApiService
 
+import com.example.ead_ecommerce_mobile_new.api.Product.ProductApiService
+
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
 object RetrofitInstance {
 
     // Base URL of your backend API
-    private const val BASE_URL = "https://9f8f-2402-4000-20c0-1ec4-c473-f64d-a4f3-264c.ngrok-free.app/" // Replace with your backend URL
+    private const val BASE_URL = "https://f8fc-2402-4000-20c0-1ec4-5d95-d595-c1ec-f27d.ngrok-free.app/" // Replace with your backend URL
 
     // Lazy initialization of Retrofit instance
     val retrofit: Retrofit by lazy {
@@ -28,6 +30,9 @@ object RetrofitInstance {
     }
     val orderApiService: OrderApiService by lazy {
         retrofit.create(OrderApiService::class.java)
+    }
+    val productApiService: ProductApiService by lazy {
+        retrofit.create(ProductApiService::class.java)
     }
 
 }
