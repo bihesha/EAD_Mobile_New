@@ -14,7 +14,7 @@ class OrderAdapter(
     inner class OrderViewHolder(val binding: ItemOrderBinding) : RecyclerView.ViewHolder(binding.root) {
         fun bind(order: Order) {
             binding.apply {
-                orderId.text = order.id
+
                 orderNumber.text = order.orderNumber
                 orderTotalPrice.text = "Total: ${order.totalPrice}"
                 orderStatus.text = order.orderStatus

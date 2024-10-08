@@ -1,3 +1,5 @@
+import com.example.ead_ecommerce_mobile_new.models.ProductFetch
+
 data class Product(
     val id: Id,
     val productName: String,
@@ -15,7 +17,7 @@ class Order(
     val id: String,
     val userId: String,
     val email: String,
-    val products: List<Product>,
+    val products: List<ProductFetch>,
     val totalPrice: Double,
     val deliveryStatus: String,
     val orderStatus: String,

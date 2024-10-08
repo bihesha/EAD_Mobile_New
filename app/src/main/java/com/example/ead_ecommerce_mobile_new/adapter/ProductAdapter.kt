@@ -12,10 +12,12 @@ class ProductAdapter(
     private val onItemClick: (ProductFetch) -> Unit
 ) : RecyclerView.Adapter<ProductAdapter.ProductViewHolder>() {
 
+    private val selectedProducts = mutableListOf<ProductFetch>()
+
     inner class ProductViewHolder(val binding: ItemProductBinding) : RecyclerView.ViewHolder(binding.root) {
         fun bind(product: ProductFetch) {
             binding.apply {
-                productId.text = product.productId // Assuming you want to display the id as a string
+
                 productName.text = product.productName
                 productCategory.text = product.productCategory
                 productDescription.text = product.productDescription
@@ -23,6 +25,11 @@ class ProductAdapter(
                 productAvailability.text = if (product.productAvailability) "Available" else "Unavailable"
             }
             itemView.setOnClickListener {
+                if (selectedProducts.contains(product)) {
+                    selectedProducts.remove(product)
+                } else {
+                    selectedProducts.add(product)
+                }
                 onItemClick(product)
             }
         }
@@ -39,4 +46,6 @@ class ProductAdapter(
     }
 
     override fun getItemCount(): Int = products.size
+
+    fun getSelectedProducts(): List<ProductFetch> = selectedProducts
 }

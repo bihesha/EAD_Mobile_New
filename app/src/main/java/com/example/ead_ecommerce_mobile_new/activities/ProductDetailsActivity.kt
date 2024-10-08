@@ -63,7 +63,7 @@ class ProductDetailActivity : AppCompatActivity() {
 
     private fun displayProductDetails(product: Product) {
         binding.apply {
-            productId.text = product.id.toString()
+
             productName.text = product.productName
             productCategory.text = product.productCategory
             productDescription.text = product.productDescription

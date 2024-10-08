@@ -4,10 +4,12 @@ import Order
 import retrofit2.Call
 import retrofit2.http.Body
 import retrofit2.http.GET
+import retrofit2.http.POST
 import retrofit2.http.PUT
 import retrofit2.http.Path
 
 interface OrderApiService {
+
     @GET("/api/Order/getAllOrders")
     fun getAllOrders(): Call<List<Order>>
 
@@ -15,7 +17,11 @@ interface OrderApiService {
     fun getOrdersByUser(@Path("userId") userId: String): Call<List<Order>>
 
     @GET("/api/Order/get/{id}")
-    fun getOrderById(@Path("id") id: String): Call<List<Order>>  // New method for single order details
+    fun getOrderById(@Path("id") id: String): Call<List<Order>>
+
+    // New method to create an order
+    @POST("/api/Order")
+    fun createOrder(@Body order: Order): Call<Order>
 
     @PUT("/api/orders/{orderId}/cancel")
     fun cancelOrder(
@@ -23,4 +29,3 @@ interface OrderApiService {
         @Body cancellationNote: String
     ): Call<Order>
 }
-
