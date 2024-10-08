@@ -53,6 +53,18 @@
             android:name=".activities.UpdateRatingActivity"
             android:exported="false"/>
 
+            android:name=".adapter.OrderAdapter"
+            android:exported="false" />
+
+        <activity
+            android:name=".activities.AllOrdersActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".activities.OrderDetailsActivity"
+            android:exported="false" />
+
+
     </application>
 
 </manifest>

@@ -10,4 +10,8 @@
     <color name="btnBlack">#2B2B2B</color>
     <color name="rectGreen">#4CAF50</color>
     <color name="BtnDanger">#FF1100</color>
+
+    <color name="colorPrimary">#6200EE</color>
+    <color name="colorPrimaryDark">#3700B3</color>
+    <color name="colorAccent">#03DAC5</color>
 </resources>
