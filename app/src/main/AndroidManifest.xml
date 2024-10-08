@@ -46,6 +46,13 @@
             android:exported="false" />
 
         <activity
+            android:name=".activities.RatingsActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".activities.UpdateRatingActivity"
+            android:exported="false"/>
+
             android:name=".adapter.OrderAdapter"
             android:exported="false" />
 
@@ -56,6 +63,7 @@
         <activity
             android:name=".activities.OrderDetailsActivity"
             android:exported="false" />
+
 
     </application>
 

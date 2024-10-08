@@ -29,9 +29,16 @@ class MainActivity : AppCompatActivity() {
         }
 
 
+        binding.imgbtnRating.setOnClickListener {
+            val intent = Intent(this,RatingsActivity::class.java)
+            startActivity(intent)
+        }
+
+
         binding.imgbtnOrder.setOnClickListener {
             val intent = Intent(this, AllOrdersActivity::class.java)
             startActivity(intent)
+
 
         binding.logOutCustomer.setOnClickListener {
             val builder = AlertDialog.Builder(this)
