@@ -1,6 +1,7 @@
 package com.example.ead_ecommerce_mobile_new.api.Customer
 
 import com.example.ead_ecommerce_mobile_new.models.Customer
+import com.example.ead_ecommerce_mobile_new.models.Customers
 import com.example.ead_ecommerce_mobile_new.models.LoginRequest
 import com.example.ead_ecommerce_mobile_new.models.LoginResponse
 import com.example.ead_ecommerce_mobile_new.models.UpdateUserResponse
@@ -30,5 +31,8 @@ interface CustomerApi {
 
     @PUT("api/User/updateAccountStatus/{id}")
     fun updateAccountStatus(@Path("id") userId: String, @Body accountStatus: String): Call<Void>
+
+    @GET("api/User/GetAllUsers")
+    fun getAllUsers(): Call<List<Customers>>
 
 }

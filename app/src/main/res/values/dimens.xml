@@ -5,7 +5,7 @@
     <dimen name="btn_register_height">69dp</dimen>
 
     <!-- Login Page-->
-    <dimen name="index_sentence">20sp</dimen>
+    <dimen name="index_sentence">34sp</dimen>
 
     <!-- Main Page -->
     <dimen name="mainPage_sentence">40sp</dimen>

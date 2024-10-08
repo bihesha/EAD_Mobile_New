@@ -45,6 +45,14 @@
             android:name=".activities.UpdateProfileActivity"
             android:exported="false" />
 
+        <activity
+            android:name=".activities.RatingsActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".activities.UpdateRatingActivity"
+            android:exported="false"/>
+
     </application>
 
 </manifest>

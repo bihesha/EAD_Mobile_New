@@ -26,4 +26,7 @@
 
     <!-- Update Account Page -->
     <string name="upd_button">Update</string>
+
+    <!-- Rating Page -->
+    <string name="rating_id">Update Rating</string>
 </resources>

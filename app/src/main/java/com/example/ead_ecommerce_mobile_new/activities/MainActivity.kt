@@ -28,6 +28,11 @@ class MainActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
+        binding.imgbtnRating.setOnClickListener {
+            val intent = Intent(this,RatingsActivity::class.java)
+            startActivity(intent)
+        }
+
         binding.logOutCustomer.setOnClickListener {
             val builder = AlertDialog.Builder(this)
             builder.setTitle("Log Out")
