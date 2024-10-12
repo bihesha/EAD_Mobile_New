@@ -1,6 +1,5 @@
 package com.example.ead_ecommerce_mobile_new.adapter
 
-import Product
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
@@ -23,12 +22,28 @@ class ProductAdapter(
                 productDescription.text = product.productDescription
                 productPrice.text = "Price: ${product.productPrice}"
                 productAvailability.text = if (product.productAvailability) "Available" else "Unavailable"
+
+                // Use the correct ID for the checkbox
+                productCheckBox.isChecked = selectedProducts.contains(product)
+
+                // Handle checkbox check/uncheck event
+                productCheckBox.setOnCheckedChangeListener { _, isChecked ->
+                    if (isChecked) {
+                        selectedProducts.add(product)
+                    } else {
+                        selectedProducts.remove(product)
+                    }
+                }
             }
+
+            // Optionally, you can keep the click listener for the entire itemView
             itemView.setOnClickListener {
                 if (selectedProducts.contains(product)) {
                     selectedProducts.remove(product)
+                    binding.productCheckBox.isChecked = false
                 } else {
                     selectedProducts.add(product)
+                    binding.productCheckBox.isChecked = true
                 }
                 onItemClick(product)
             }

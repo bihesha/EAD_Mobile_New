@@ -9,5 +9,5 @@ class ProductFetch (
     val productVendor: String,
     val productStatus: Boolean,
     val productAvailability: Boolean,
-    val productPrice: Double
+    val productPrice: Int
 )

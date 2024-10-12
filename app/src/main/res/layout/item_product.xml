@@ -28,6 +28,7 @@
             android:text="Product Name"
             android:textSize="18sp"
             android:textStyle="bold"
+            android:layout_marginTop="8dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@id/productCheckBox" />
@@ -38,6 +39,7 @@
             android:layout_height="wrap_content"
             android:text="Category"
             android:textColor="#757575"
+            android:layout_marginTop="8dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@id/productName" />
@@ -48,6 +50,7 @@
             android:layout_height="wrap_content"
             android:text="Description"
             android:textColor="#757575"
+            android:layout_marginTop="8dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@id/productCategory" />
@@ -59,6 +62,7 @@
             android:text="Price"
             android:textColor="#4CAF50"
             android:textStyle="bold"
+            android:layout_marginTop="8dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@id/productDescription" />
@@ -70,6 +74,7 @@
             android:text="Availability"
             android:textColor="#FF9800"
             android:textStyle="bold"
+            android:layout_marginTop="8dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@id/productPrice" />

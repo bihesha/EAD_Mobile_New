@@ -10,7 +10,7 @@ data class Product(
     val productStatus: Boolean,
     val productAvailability: Boolean,
     val productImage: String,
-    val productPrice: Double
+    val productPrice: Int
 )
 
 class Order(

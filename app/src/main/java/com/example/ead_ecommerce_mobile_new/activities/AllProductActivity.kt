@@ -18,6 +18,7 @@ import Order
 import android.content.Context
 import android.content.Intent
 import android.content.SharedPreferences
+import android.util.Log
 import android.view.View
 import com.example.ead_ecommerce_mobile_new.api.Retrofit.RetrofitInstance.orderApiService
 
@@ -57,21 +58,36 @@ class AllProductActivity : AppCompatActivity() {
         val userId = sharedPreferences.getString("userId", null)
         val email = sharedPreferences.getString("email", null)
 
+        // Log the fetched userId and email
+        Log.d("OrderCreation", "Fetched userId: $userId, email: $email")
+
         // Create an order object
         if (selectedProducts.isNotEmpty()) {
+            val orderId = UUID.randomUUID().toString().replace("-", "").substring(0, 24) // Generate a random ID for the order
+            val orderNumber = UUID.randomUUID().toString() // Generate a random order number
+
+            // Log the generated UUID for the order ID
+            Log.d("OrderCreation", "Generated order ID: $orderId")
+
+            // Calculate total price directly using productPrice as Int
+            val totalPrice = selectedProducts.sumOf { it.productPrice } // No need for toDoubleOrNull() as productPrice is an Int
+
             val order = Order(
-                id = UUID.randomUUID().toString(),
+                id = orderId,
                 userId = userId ?: "",
                 email = email ?: "",
                 products = selectedProducts,
-                totalPrice = selectedProducts.sumOf { it.productPrice },
+                totalPrice = totalPrice.toDouble(), // Keep totalPrice as Int
                 deliveryStatus = "Pending",
                 orderStatus = "New",
-                orderNumber = UUID.randomUUID().toString(),
+                orderNumber = orderNumber,
                 isCancel = false,
-                cancellationNote = null,
+                cancellationNote = "",
                 orderDate = SimpleDateFormat("yyyy-MM-dd", Locale.getDefault()).format(Date())
             )
+
+            // Log the entire order object for debugging if needed
+            Log.d("OrderCreation", "Order: $order")
 
             // Show loading indicator
             binding.progressBar.visibility = View.VISIBLE
@@ -81,10 +97,14 @@ class AllProductActivity : AppCompatActivity() {
                 override fun onResponse(call: Call<Order>, response: Response<Order>) {
                     binding.progressBar.visibility = View.GONE // Hide loading indicator
                     binding.createOrderButton.isEnabled = true // Re-enable button
+
                     if (response.isSuccessful) {
                         val createdOrder = response.body()
+                        Log.d("OrderCreation", "Order created successfully: ${createdOrder?.id}")
                         Toast.makeText(this@AllProductActivity, "Order created successfully! ID: ${createdOrder?.id}", Toast.LENGTH_SHORT).show()
                     } else {
+                        // Log the error response from the server
+                        Log.d("OrderCreation", "Failed to create order. Response code: ${response.code()}, message: ${response.message()}, body: ${response.errorBody()?.string()}")
                         Toast.makeText(this@AllProductActivity, "Failed to create order", Toast.LENGTH_SHORT).show()
                     }
                 }
@@ -92,6 +112,7 @@ class AllProductActivity : AppCompatActivity() {
                 override fun onFailure(call: Call<Order>, t: Throwable) {
                     binding.progressBar.visibility = View.GONE // Hide loading indicator
                     binding.createOrderButton.isEnabled = true // Re-enable button
+                    Log.d("OrderCreation", "Error creating order: ${t.message}")
                     Toast.makeText(this@AllProductActivity, "Error: ${t.message}", Toast.LENGTH_SHORT).show()
                 }
             })
