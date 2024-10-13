@@ -55,8 +55,8 @@ class LoginPageActivity: AppCompatActivity() {
                         }
 
                         // Check if the account status is "NotActivate"
-                        if (loginResponse.message == "NotActivate") {
-                            Toast.makeText(this@LoginPageActivity, "Account not activated. Please check your email.", Toast.LENGTH_SHORT).show()
+                        if (loginResponse.accountStatus == "NotActivate") {
+                            Toast.makeText(this@LoginPageActivity, "Your cart.io account is not activated. Please contact this number. (071-2145236)", Toast.LENGTH_SHORT).show()
                             return
                         }
 

@@ -38,7 +38,8 @@ data class LoginResponse(
     val message: String,
     val userType: String,
     val userId: String,
-    val token: String
+    val token: String,
+    val accountStatus: String
 )
 
 data class UpdateUserResponse(
