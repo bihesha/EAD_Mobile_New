@@ -15,21 +15,44 @@
             android:layout_height="wrap_content"
             android:padding="16dp">
 
+            <!-- Back Button Icon -->
+            <ImageView
+                android:id="@+id/btnBackViewProfile"
+                android:layout_width="38dp"
+                android:layout_height="34dp"
+                android:layout_marginTop="24dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/baseline_arrow_back_24"
+                android:contentDescription="Back Button" />
+
             <!-- Heading for Product Details -->
             <TextView
                 android:id="@+id/productDetailsHeading"
-                android:layout_width="0dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
-                android:layout_marginBottom="20dp"
+                android:gravity="center"
                 android:text="Product Details"
                 android:textSize="24sp"
                 android:textStyle="bold"
-                android:gravity="center"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
+            <!-- Product Image -->
+            <ImageView
+                android:id="@+id/productImage"
+                android:layout_width="0dp"
+                android:layout_height="200dp"
+                android:layout_marginTop="16dp"
+                android:scaleType="centerCrop"
+                android:contentDescription="Product Image"
+                app:layout_constraintTop_toBottomOf="@id/productDetailsHeading"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+            <!-- Product Name -->
             <TextView
                 android:id="@+id/productName"
                 android:layout_width="0dp"
@@ -42,8 +65,9 @@
                 android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/productDetailsHeading" />
+                app:layout_constraintTop_toBottomOf="@id/productImage" />
 
+            <!-- Product Category -->
             <TextView
                 android:id="@+id/productCategory"
                 android:layout_width="0dp"
@@ -58,6 +82,7 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/productName" />
 
+            <!-- Product Description -->
             <TextView
                 android:id="@+id/productDescription"
                 android:layout_width="0dp"
@@ -72,6 +97,7 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/productCategory" />
 
+            <!-- Product Price -->
             <TextView
                 android:id="@+id/productPrice"
                 android:layout_width="0dp"
@@ -86,6 +112,7 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/productDescription" />
 
+            <!-- Product Availability -->
             <TextView
                 android:id="@+id/productAvailability"
                 android:layout_width="0dp"
@@ -100,6 +127,7 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/productPrice" />
 
+            <!-- Back to Products Button -->
             <Button
                 android:id="@+id/btnBackToProducts"
                 android:layout_width="0dp"
@@ -117,4 +145,5 @@
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

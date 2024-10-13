@@ -41,6 +41,11 @@ class AllOrdersActivity : AppCompatActivity() {
         }
 
         binding.orderRecyclerView.layoutManager = LinearLayoutManager(this)
+
+        // Set up back button functionality
+        binding.backButton.setOnClickListener {
+            finish() // Close the current activity and return to the previous one
+        }
     }
 
     private fun fetchAllOrders(userId: String) {
