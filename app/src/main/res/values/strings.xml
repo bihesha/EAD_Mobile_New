@@ -29,4 +29,9 @@
 
     <!-- Rating Page -->
     <string name="rating_id">Update Rating</string>
+
+    <!-- All Order Page -->
+    <string name="rating_create">Add Rating</string>
+    <string name="createRating_button">Submit</string>
+    <string name="view_order">View Order</string>
 </resources>

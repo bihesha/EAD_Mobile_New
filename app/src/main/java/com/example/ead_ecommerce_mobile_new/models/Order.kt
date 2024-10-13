@@ -12,7 +12,6 @@ data class Product(
     val productImage: String,
     val productPrice: Double
 )
-
 class Order(
     val id: String,
     val userId: String,
@@ -25,7 +24,14 @@ class Order(
     val isCancel: Boolean,
     val cancellationNote: String?,
     val orderDate: String
-)
+) {
+    override fun toString(): String {
+        return "Order(id='$id', userId='$userId', email='$email', products=$products, totalPrice=$totalPrice, " +
+                "deliveryStatus='$deliveryStatus', orderStatus='$orderStatus', orderNumber='$orderNumber', " +
+                "isCancel=$isCancel, cancellationNote=$cancellationNote, orderDate='$orderDate')"
+    }
+}
+
 
 data class Id(
     val timestamp: String,

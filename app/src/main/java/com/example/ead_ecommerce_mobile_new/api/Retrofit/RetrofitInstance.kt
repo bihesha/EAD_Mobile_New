@@ -14,7 +14,7 @@ import retrofit2.converter.gson.GsonConverterFactory
 object RetrofitInstance {
 
     // Base URL of your backend API
-    private const val BASE_URL = "https://f8fc-2402-4000-20c0-1ec4-5d95-d595-c1ec-f27d.ngrok-free.app/" // Replace with your backend URL
+    private const val BASE_URL = "https://3dda-2402-4000-20c3-d0ae-41a0-95fe-baa6-f8ba.ngrok-free.app/" // Replace with your backend URL
 
     // Lazy initialization of Retrofit instance
     val retrofit: Retrofit by lazy {

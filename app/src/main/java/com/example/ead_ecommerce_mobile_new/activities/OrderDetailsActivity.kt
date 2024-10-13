@@ -2,6 +2,7 @@ package com.example.ead_ecommerce_mobile_new.activities
 
 import Order
 import android.content.ContentValues.TAG
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.widget.Toast
@@ -41,26 +42,6 @@ class OrderDetailsActivity : AppCompatActivity() {
         }
     }
 
-//    private fun fetchOrderDetails(orderId: String) {
-//        // Use the correct API method for fetching single order details
-//        orderApiService.getOrderById(orderId).enqueue(object : Callback<Order> {
-//            override fun onResponse(call: Call<Order>, response: Response<Order>) {
-//                if (response.isSuccessful && response.body() != null) {
-//                    val order = response.body()!!
-//                    displayOrderDetails(order)
-//                } else {
-//                    Toast.makeText(this@OrderDetailsActivity, "Failed to fetch order", Toast.LENGTH_SHORT).show()
-//                }
-//            }
-//
-//            override fun onFailure(call: Call<Order>, t: Throwable) {
-//                // Log detailed error information
-//                Log.e("OrderDetailsActivity", "API call failed", t)
-//                Toast.makeText(this@OrderDetailsActivity, "Error fetching order: ${t.message}", Toast.LENGTH_SHORT).show()
-//            }
-//        })
-//    }
-
     private fun fetchOrderDetails(orderId: String) {
         // Make sure you're using Call<List<Order>> in the enqueue method
         orderApiService.getOrderById(orderId).enqueue(object : Callback<List<Order>> {
@@ -68,6 +49,7 @@ class OrderDetailsActivity : AppCompatActivity() {
             override fun onResponse(call: Call<List<Order>>, response: Response<List<Order>>) {
                 if (response.isSuccessful && response.body() != null && response.body()!!.isNotEmpty()) {
                     val order = response.body()!![0] // Get the first (and only) order from the list
+                    Log.d("OrderDetails","Order: $order")
                     displayOrderDetails(order)
                 } else {
                     Toast.makeText(this@OrderDetailsActivity, "Failed to fetch order", Toast.LENGTH_SHORT).show()
@@ -93,6 +75,16 @@ class OrderDetailsActivity : AppCompatActivity() {
             deliveryStatus.text = order.deliveryStatus
             orderDate.text = order.orderDate.toString()
             orderCancellationNote.text = order.cancellationNote ?: "N/A"
+
+            // Extract productVendor from the first product
+            val productVendor = order.products.firstOrNull()?.productVendor ?: "N/A"
+
+            // Set button click listener for creating rating
+            binding.btnCreateRating.setOnClickListener {
+                val intent = Intent(this@OrderDetailsActivity, AddNewRating::class.java)
+                intent.putExtra("productVendor", productVendor)
+                startActivity(intent)
+            }
         }
     }
 }
