@@ -1,8 +1,10 @@
 package com.example.ead_ecommerce_mobile_new.adapter
 
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 import com.example.ead_ecommerce_mobile_new.databinding.ItemProductBinding
 import com.example.ead_ecommerce_mobile_new.models.ProductFetch
 
@@ -22,6 +24,13 @@ class ProductAdapter(
                 productDescription.text = product.productDescription
                 productPrice.text = "Price: ${product.productPrice}"
                 productAvailability.text = if (product.productAvailability) "Available" else "Unavailable"
+
+                Log.d("ProductImage", "Image URL: ${product.productImage}")
+
+                // Use Glide to load the product image from the URL
+                Glide.with(binding.productImage.context)
+                    .load(product.productImage)
+                    .into(productImage)
 
                 // Use the correct ID for the checkbox
                 productCheckBox.isChecked = selectedProducts.contains(product)

@@ -15,7 +15,7 @@ object RetrofitInstance {
 
     // Base URL of your backend API
 
-    private const val BASE_URL = "https://54d7-175-157-11-233.ngrok-free.app/" // Replace with your backend URL
+    private const val BASE_URL = "https://551f-2402-4000-20c3-d0ae-5dab-f490-86e6-3a8d.ngrok-free.app/" // Replace with your backend URL
 
     // Lazy initialization of Retrofit instance
     val retrofit: Retrofit by lazy {
