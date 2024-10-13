@@ -21,6 +21,17 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
+        <ImageView
+            android:id="@+id/productImage"
+            android:layout_width="0dp"
+            android:layout_height="200dp"
+            android:scaleType="centerCrop"
+            app:layout_constraintTop_toBottomOf="@id/productCheckBox"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="8dp"
+            android:contentDescription="Product Image"/>
+
         <TextView
             android:id="@+id/productName"
             android:layout_width="0dp"
@@ -31,7 +42,7 @@
             android:layout_marginTop="8dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/productCheckBox" />
+            app:layout_constraintTop_toBottomOf="@+id/productImage" />
 
         <TextView
             android:id="@+id/productCategory"
