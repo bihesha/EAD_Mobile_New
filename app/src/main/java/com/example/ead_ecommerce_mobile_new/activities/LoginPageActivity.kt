@@ -1,10 +1,14 @@
 package com.example.ead_ecommerce_mobile_new.activities
 
+import android.app.Dialog
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
+import android.view.Window
+import android.widget.Button
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import com.example.ead_ecommerce_mobile_new.R
 import com.example.ead_ecommerce_mobile_new.api.Retrofit.RetrofitInstance
 import com.example.ead_ecommerce_mobile_new.databinding.ActivityLoginPageBinding
 import com.example.ead_ecommerce_mobile_new.models.LoginRequest
@@ -56,7 +60,8 @@ class LoginPageActivity: AppCompatActivity() {
 
                         // Check if the account status is "NotActivate"
                         if (loginResponse.accountStatus == "NotActivate") {
-                            Toast.makeText(this@LoginPageActivity, "Your cart.io account is not activated. Please contact this number. (071-2145236)", Toast.LENGTH_SHORT).show()
+                            showNotActivatedMessage()
+//                            Toast.makeText(this@LoginPageActivity, "Your cart.io account is not activated. Please contact this number. (071-2145236)", Toast.LENGTH_SHORT).show()
                             return
                         }
 
@@ -88,4 +93,17 @@ class LoginPageActivity: AppCompatActivity() {
         })
     }
 
+    private fun showNotActivatedMessage() {
+        val failedDialog = Dialog(this)
+        failedDialog.requestWindowFeature(Window.FEATURE_NO_TITLE)
+        failedDialog.setCancelable(false)
+        failedDialog.setContentView(R.layout.login_failed_dialog)
+
+        val buttonFailed : Button = failedDialog.findViewById(R.id.buttonFailed)
+
+        buttonFailed.setOnClickListener {
+            failedDialog.dismiss()
+        }
+        failedDialog.show()
+    }
 }
