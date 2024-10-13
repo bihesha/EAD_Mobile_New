@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">EAD_Ecommerce_Mobile_new</string>
+    <string name="app_name">Cart.io</string>
 
     <!-- Sign up Page -->
     <string name="signup_id">Sign up</string>
@@ -34,4 +34,5 @@
     <string name="rating_create">Add Rating</string>
     <string name="createRating_button">Submit</string>
     <string name="view_order">View Order</string>
+
 </resources>
