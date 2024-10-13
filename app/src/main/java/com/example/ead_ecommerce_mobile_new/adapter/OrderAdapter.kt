@@ -1,9 +1,14 @@
 package com.example.ead_ecommerce_mobile_new.adapter
 
 import Order
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import android.widget.Button
 import androidx.recyclerview.widget.RecyclerView
+import com.example.ead_ecommerce_mobile_new.R
+import com.example.ead_ecommerce_mobile_new.activities.AddNewRating
+import com.example.ead_ecommerce_mobile_new.activities.UpdateRatingActivity
 import com.example.ead_ecommerce_mobile_new.databinding.ItemOrderBinding
 
 class OrderAdapter(

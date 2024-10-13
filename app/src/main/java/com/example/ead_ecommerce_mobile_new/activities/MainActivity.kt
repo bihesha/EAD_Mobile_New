@@ -7,8 +7,6 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
-import com.example.ead_ecommerce_mobile_new.R
-import com.example.ead_ecommerce_mobile_new.databinding.ActivityLoginPageBinding
 import com.example.ead_ecommerce_mobile_new.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
@@ -28,17 +26,15 @@ class MainActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
-
         binding.imgbtnRating.setOnClickListener {
-            val intent = Intent(this,RatingsActivity::class.java)
+            val intent = Intent(this,RatingActivity::class.java)
             startActivity(intent)
         }
-
 
         binding.imgbtnOrder.setOnClickListener {
             val intent = Intent(this, AllOrdersActivity::class.java)
             startActivity(intent)
-
+        }
 
         binding.logOutCustomer.setOnClickListener {
             val builder = AlertDialog.Builder(this)
@@ -65,11 +61,10 @@ class MainActivity : AppCompatActivity() {
 
             }
 
-            binding.imgbtnProduct.setOnClickListener {
-                val intent = Intent(this, AllProductActivity::class.java)
-                startActivity(intent)
-            }
-
+        binding.imgbtnProduct.setOnClickListener {
+            val intent = Intent(this, AllProductActivity::class.java)
+            startActivity(intent)
         }
+
     }
 }

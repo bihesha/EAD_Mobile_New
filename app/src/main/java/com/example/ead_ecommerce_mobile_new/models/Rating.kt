@@ -9,6 +9,14 @@ data class Rating(
     val ratingNo: Int
 )
 
+data class AddRating(
+    val name: String,
+    val cusId: String,
+    val vendorId: String,
+    val comment: String,
+    val ratingNo: Int
+)
+
 data class RatingResponse(
     val message: String,
     val ratings: List<Rating>

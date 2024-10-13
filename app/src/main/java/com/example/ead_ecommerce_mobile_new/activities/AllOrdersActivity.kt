@@ -15,6 +15,7 @@ import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 import Order
+import android.util.Log
 
 class AllOrdersActivity : AppCompatActivity() {
 
@@ -47,6 +48,7 @@ class AllOrdersActivity : AppCompatActivity() {
             override fun onResponse(call: Call<List<Order>>, response: Response<List<Order>>) {
                 if (response.isSuccessful && response.body() != null) {
                     val orders = response.body()!!
+                    Log.d("AllOrders", "Fetched ${orders.size} orders: $orders")
                     setupRecyclerView(orders)
                 } else {
                     Toast.makeText(this@AllOrdersActivity, "Failed to fetch orders", Toast.LENGTH_SHORT).show()

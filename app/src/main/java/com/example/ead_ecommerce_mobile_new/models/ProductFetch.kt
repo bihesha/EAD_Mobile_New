@@ -10,4 +10,12 @@ class ProductFetch (
     val productStatus: Boolean,
     val productAvailability: Boolean,
     val productPrice: Int
-)
+) {
+    override fun toString(): String {
+        return "ProductFetch(productId='$productId', productName='$productName', productCategory='$productCategory', " +
+                "productDescription='$productDescription', productQuantity=$productQuantity, " +
+                "productVendor='$productVendor', productStatus=$productStatus, " +
+                "productAvailability=$productAvailability, productPrice=$productPrice)"
+    }
+}
+

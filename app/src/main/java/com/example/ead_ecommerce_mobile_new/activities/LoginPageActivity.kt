@@ -46,16 +46,28 @@ class LoginPageActivity: AppCompatActivity() {
             override fun onResponse(call: Call<LoginResponse>, response: Response<LoginResponse>) {
                 if (response.isSuccessful) {
                     response.body()?.let {
-                        // Log the full response to check what is returned
-                        Log.d("LoginResponse", "UserId: ${it.userId}, Email: $email")
-                        // Successful login
                         val loginResponse = response.body()!!
+
+                        // Check if the user is a "Customer"
+                        if (loginResponse.userType != "Customer") {
+                            Toast.makeText(this@LoginPageActivity, "Only Customers can log in.", Toast.LENGTH_SHORT).show()
+                            return
+                        }
+
+                        // Check if the account status is "NotActivate"
+                        if (loginResponse.accountStatus == "NotActivate") {
+                            Toast.makeText(this@LoginPageActivity, "Your cart.io account is not activated. Please contact this number. (071-2145236)", Toast.LENGTH_SHORT).show()
+                            return
+                        }
+
+                        // Log successful login for Customer
+                        Log.d("LoginResponse", "UserId: ${loginResponse.userId}, Email: $email")
                         Toast.makeText(this@LoginPageActivity, "Login successful!", Toast.LENGTH_SHORT).show()
-                        // Store userId and email in shared preferences or any storage of your choice
-                        // Example using SharedPreferences:
+
+                        // Store userId and email in SharedPreferences
                         val sharedPreferences = getSharedPreferences("user_prefs", MODE_PRIVATE)
                         sharedPreferences.edit().apply {
-                            putString("userId", it.userId)
+                            putString("userId", loginResponse.userId)
                             putString("email", email)
                             apply()
                         }
@@ -75,4 +87,5 @@ class LoginPageActivity: AppCompatActivity() {
             }
         })
     }
+
 }

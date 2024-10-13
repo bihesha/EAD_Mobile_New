@@ -1,6 +1,5 @@
 package com.example.ead_ecommerce_mobile_new.activities
 
-import android.content.Context
 import android.content.Intent
 import android.content.SharedPreferences
 import android.os.Bundle
@@ -12,11 +11,8 @@ import androidx.appcompat.app.AppCompatActivity
 import com.example.ead_ecommerce_mobile_new.R
 import com.example.ead_ecommerce_mobile_new.api.Rating.RatingApi
 import com.example.ead_ecommerce_mobile_new.api.Retrofit.RetrofitInstance
-import com.example.ead_ecommerce_mobile_new.databinding.ActivityUpdateProfileBinding
 import com.example.ead_ecommerce_mobile_new.databinding.ActivityUpdateRatingBinding
-import com.example.ead_ecommerce_mobile_new.models.Customer
 import com.example.ead_ecommerce_mobile_new.models.Rating
-import com.example.ead_ecommerce_mobile_new.models.RatingResponse
 import com.example.ead_ecommerce_mobile_new.models.UpdateRatingResponse
 import retrofit2.Call
 import retrofit2.Callback
@@ -64,7 +60,7 @@ class UpdateRatingActivity : AppCompatActivity() {
         }
 
         binding.btnUpdateBack.setOnClickListener {
-            val intent = Intent(this,RatingsActivity::class.java)
+            val intent = Intent(this,RatingActivity::class.java)
             startActivity(intent)
         }
 
@@ -108,7 +104,7 @@ class UpdateRatingActivity : AppCompatActivity() {
                     Toast.makeText(this@UpdateRatingActivity, "Rating updated successfully", Toast.LENGTH_SHORT).show()
 
                     // Go back to the ratings list and refresh it
-                    val intent = Intent(this@UpdateRatingActivity, RatingsActivity::class.java)
+                    val intent = Intent(this@UpdateRatingActivity, RatingActivity::class.java)
                     intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_NEW_TASK
                     startActivity(intent)
                     finish()  // Close this activity

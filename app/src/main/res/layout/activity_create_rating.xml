@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".activities.UpdateRatingActivity">
+    tools:context=".activities.AddNewRating">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -18,8 +18,8 @@
                 android:id="@+id/updateheading"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="35dp"
-                android:text="Update Rating"
+                android:layout_marginTop="30dp"
+                android:text="Add Rating"
                 android:textAlignment="center"
                 android:textColor="#0B0B0B"
                 android:textSize="34sp"
@@ -30,7 +30,7 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <EditText
-                android:id="@+id/userCmtupdate"
+                android:id="@+id/userNamerating"
                 android:layout_width="380dp"
                 android:layout_height="50dp"
                 android:layout_marginStart="32dp"
@@ -44,31 +44,67 @@
                 android:paddingTop="10dp"
                 android:paddingRight="10dp"
                 android:paddingBottom="10dp"
-                android:text="Fullname"
+                android:hint="Fullname"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.515"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/updateheading" />
 
+            <EditText
+                android:id="@+id/userCmtrating"
+                android:layout_width="380dp"
+                android:layout_height="50dp"
+                android:layout_marginTop="24dp"
+                android:background="@drawable/input_bg"
+                android:drawablePadding="10dp"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:paddingLeft="20dp"
+                android:paddingTop="10dp"
+                android:paddingRight="10dp"
+                android:paddingBottom="10dp"
+                android:hint="Comment"
+                app:layout_constraintEnd_toEndOf="@+id/userNamerating"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="@+id/userNamerating"
+                app:layout_constraintTop_toBottomOf="@+id/userNamerating" />
+
+            <EditText
+                android:id="@+id/userAddrating"
+                android:layout_width="380dp"
+                android:layout_height="50dp"
+                android:layout_marginTop="24dp"
+                android:background="@drawable/input_bg"
+                android:drawablePadding="10dp"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:paddingLeft="20dp"
+                android:paddingTop="10dp"
+                android:paddingRight="10dp"
+                android:paddingBottom="10dp"
+                android:hint="Rating Out Of 5"
+                app:layout_constraintEnd_toEndOf="@+id/userCmtrating"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="@+id/userCmtrating"
+                app:layout_constraintTop_toBottomOf="@+id/userCmtrating" />
 
             <Button
                 android:id="@+id/btnViewUpdate"
                 android:layout_width="@dimen/view_btn_update"
                 android:layout_height="@dimen/view_btn_update_height"
-                android:layout_marginTop="24dp"
+                android:layout_marginTop="72dp"
                 android:backgroundTint="@color/btnBlack"
                 android:paddingLeft="20dp"
                 android:paddingTop="10dp"
                 android:paddingRight="10dp"
                 android:paddingBottom="10dp"
-                android:text="@string/upd_button"
+                android:text="@string/createRating_button"
                 android:textAlignment="gravity"
                 android:textSize="20sp"
                 android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.521"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/userCmtupdate" />
+                app:layout_constraintTop_toBottomOf="@+id/userAddrating" />
 
             <ImageView
                 android:id="@+id/btnUpdateBack"
@@ -76,7 +112,7 @@
                 android:layout_height="31dp"
                 android:layout_marginTop="40dp"
                 app:layout_constraintEnd_toStartOf="@+id/updateheading"
-                app:layout_constraintHorizontal_bias="0.428"
+                app:layout_constraintHorizontal_bias="0.287"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 app:srcCompat="@drawable/baseline_arrow_back_24" />
