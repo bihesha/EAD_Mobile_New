@@ -14,14 +14,13 @@ import com.example.ead_ecommerce_mobile_new.adapter.RatingsAdapter
 import com.example.ead_ecommerce_mobile_new.api.Rating.RatingApi
 import com.example.ead_ecommerce_mobile_new.api.Retrofit.RetrofitInstance
 import com.example.ead_ecommerce_mobile_new.databinding.ActivityRatingBinding
-import com.example.ead_ecommerce_mobile_new.models.Customer
 import com.example.ead_ecommerce_mobile_new.models.Customers
 import com.example.ead_ecommerce_mobile_new.models.RatingResponse
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
-class RatingsActivity : AppCompatActivity() {
+class RatingActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityRatingBinding
     private lateinit var recyclerView: RecyclerView
@@ -35,6 +34,9 @@ class RatingsActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_rating)
 
+        binding = ActivityRatingBinding.inflate(layoutInflater)
+        setContentView(binding.root)
+
         // Initialize RecyclerView
         recyclerView = findViewById(R.id.recyclerViewRatings)
         recyclerView.layoutManager = LinearLayoutManager(this)
@@ -42,6 +44,11 @@ class RatingsActivity : AppCompatActivity() {
         // Fetch userId from preferences
         val sharedPreferences = getSharedPreferences("user_prefs", MODE_PRIVATE)
         userId = sharedPreferences.getString("userId", null) ?: ""
+
+        binding.btnBackViewProfile.setOnClickListener {
+            val intent = Intent(this,MainActivity::class.java)
+            startActivity(intent)
+        }
 
         if (userId.isNotEmpty()) {
             fetchRatings(userId)  // Fetch ratings based on cusId (same as userId)
@@ -65,13 +72,13 @@ class RatingsActivity : AppCompatActivity() {
                     fetchAllUsers()
                 } else {
                     Log.e("RatingsActivity", "Failed to fetch ratings: ${response.errorBody()?.string()}")
-                    Toast.makeText(this@RatingsActivity, "Failed to fetch ratings", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this@RatingActivity, "Failed to fetch ratings", Toast.LENGTH_SHORT).show()
                 }
             }
 
             override fun onFailure(call: Call<RatingResponse>, t: Throwable) {
                 Log.e("RatingsActivity", "Error fetching ratings: ${t.message}", t)
-                Toast.makeText(this@RatingsActivity, "Error: ${t.message}", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this@RatingActivity, "Error: ${t.message}", Toast.LENGTH_SHORT).show()
             }
         })
     }

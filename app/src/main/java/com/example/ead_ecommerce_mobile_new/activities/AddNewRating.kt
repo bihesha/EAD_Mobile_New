@@ -1,6 +1,5 @@
 package com.example.ead_ecommerce_mobile_new.activities
 
-import android.content.ContentValues
 import android.content.Context
 import android.content.Intent
 import android.content.SharedPreferences
@@ -68,7 +67,7 @@ class AddNewRating : AppCompatActivity() {
                     Toast.makeText(this@AddNewRating, "Rating added successfully", Toast.LENGTH_SHORT).show()
 
                     // Redirect or perform any action as needed, e.g., navigating to another activity
-                    val intent = Intent(this@AddNewRating, RatingsActivity::class.java)
+                    val intent = Intent(this@AddNewRating, RatingActivity::class.java)
                     startActivity(intent)
                 } else {
                     // Handle failure, such as validation errors
