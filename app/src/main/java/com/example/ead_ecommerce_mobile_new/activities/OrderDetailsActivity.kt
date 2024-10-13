@@ -40,6 +40,9 @@ class OrderDetailsActivity : AppCompatActivity() {
         binding.btnBackToOrders.setOnClickListener {
             finish()
         }
+        binding.btnBackViewOrders.setOnClickListener {
+            finish()
+        }
     }
 
     private fun fetchOrderDetails(orderId: String) {

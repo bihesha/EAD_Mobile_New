@@ -48,6 +48,11 @@ class AllProductActivity : AppCompatActivity() {
         binding.createOrderButton.setOnClickListener {
             createOrder()
         }
+
+        // Set up back button functionality
+        binding.backButton.setOnClickListener {
+            finish() // Close the current activity and return to the previous one
+        }
     }
 
     private fun createOrder() {
@@ -121,8 +126,6 @@ class AllProductActivity : AppCompatActivity() {
         }
     }
 
-
-
     private fun fetchAllProducts() {
         productApiService.getAllProducts().enqueue(object : Callback<List<ProductFetch>> {
             override fun onResponse(call: Call<List<ProductFetch>>, response: Response<List<ProductFetch>>) {
@@ -141,11 +144,19 @@ class AllProductActivity : AppCompatActivity() {
     }
 
     private fun setupRecyclerView(products: List<ProductFetch>) {
-        productAdapter = ProductAdapter(products) { selectedProduct ->
+        // Filter products based on availability before setting up the adapter
+        val availableProducts = products.filter { it.productAvailability } // Only include products that are available
+
+        productAdapter = ProductAdapter(availableProducts) { selectedProduct ->
             val intent = Intent(this, ProductDetailActivity::class.java)
             intent.putExtra("productId", selectedProduct.productId)
             startActivity(intent)
         }
         binding.productRecyclerView.adapter = productAdapter
+
+        // Show a message if no products are available
+        if (availableProducts.isEmpty()) {
+            Toast.makeText(this, "No available products", Toast.LENGTH_SHORT).show()
+        }
     }
 }
