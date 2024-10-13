@@ -9,7 +9,7 @@ class ProductFetch (
     val productVendor: String,
     val productStatus: Boolean,
     val productAvailability: Boolean,
-    val productPrice: Double
+    val productPrice: Int
 ) {
     override fun toString(): String {
         return "ProductFetch(productId='$productId', productName='$productName', productCategory='$productCategory', " +
@@ -18,3 +18,4 @@ class ProductFetch (
                 "productAvailability=$productAvailability, productPrice=$productPrice)"
     }
 }
+
